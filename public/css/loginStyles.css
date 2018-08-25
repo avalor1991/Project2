@@ -1,0 +1,42 @@
+body {
+  background-image: url("../img/mech1.jpg") !important;
+  height: 100%;
+}
+
+body > .grid {
+    height: 100%;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .column {
+    max-width: 450px;
+  }
+  #loginHeader {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  #loginInput{
+    color: rgba(255, 255, 255, 0.9);
+    background-color: green;
+  }
+
+  #loginInput:hover {
+    background-color: gray;
+  }
+
+  #newInput, #newSubmit {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: #5bc0eb;
+  }
+
+  #newInput:hover, #newSubmit:hover {
+    background-color: #489abd;
+  }
+
+  #newField {
+    margin: 10px;
+  }
+
+  #newSelection {
+    margin: 10px;
+  }
