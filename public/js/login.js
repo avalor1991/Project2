@@ -1,6 +1,6 @@
-$(document).ready(function () {$(".ui.dropdown").dropdown();
+$(document).ready(function () {
             
-        $('.ui.form')
+        $('.modal')
             .form({
                 fields: {
                     email: {
@@ -29,5 +29,4 @@ $(document).ready(function () {$(".ui.dropdown").dropdown();
                     }
                 }
             });
-
     });

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Mechanic World</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="styles/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#"><strong>M E C H A N I C || W O R L D</strong</a>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto smooth-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#intro">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#best-features">Features</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- Links -->
+
+                <!-- Social Icon  -->
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link"><button data-toggle="modal" data-target="#modalLoginForm" id = "signIn">Login</button></a>
+                    </li>
+                    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <!-- <div class="md-form mb-5">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <input type="email" id="defaultForm-email" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                        </div>
+        
+                        <div class="md-form mb-4">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <input type="password" id="defaultForm-pass" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                        </div> -->
+<form action="/login" method="post" class="ui large form" id="signIn" name="signin">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="email" type="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <!-- <div class="ui fluid large submit button" value="Log In" id="loginInput">Log In</div> -->
+                <input class="btn btn-default d-flex justify-content-center" type="submit" value="Log In" id="loginInput" />
+            </div>
+
+            <div class="ui error message"></div>
+
+        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+                    <li class="nav-item">
+                        <a class="nav-link"><button data-toggle="modal" data-target="#modalRegisterForm" id = "signIn">Sign Up</button></a>
+                    </li>
+                    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3">
+                            <!-- {{!-- <div class="md-form mb-5">
+                                <i class="fa fa-user prefix grey-text"></i>
+                                <input type="text" id="orangeForm-name" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="orangeForm-name">First Name</label>
+                            </div>
+                            <div class="md-form mb-5">
+                                <i class="fa fa-user prefix grey-text"></i>
+                                <input type="text" id="orangeForm-name" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="orangeForm-name">Last Name</label>
+                            </div>
+                            <div class="md-form mb-5">
+                                <i class="fa fa-envelope prefix grey-text"></i>
+                                <input type="email" id="orangeForm-email" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+                            </div>
+            
+                            <div class="md-form mb-4">
+                                <i class="fa fa-lock prefix grey-text"></i>
+                                <input type="password" id="orangeForm-pass" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+                            </div> --}} -->
+<form action="/signup" method="post" class="ui large form" id="signup" name="signup">
+            <div class="ui stacked segment">
+                <label for="email">Email</label>
+                <input class="text" name="email" type="email" />
+                <label for="firstName">First Name</label>
+                <input name="firstName" type="text" />
+                <label for="lastName">Last Name</label>
+                <input name="lastName" type="text" />
+                <label for="password">New Password</label>
+                <input name="password" type="password" />
+                <input class="ui fluid large submit button" type="submit" value="Sign Up" id="loginInput" />
+            </div>
+
+        </form>
+            
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button class="btn btn-deep-orange">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    
+                </ul>
+
+            </div>
+            <!-- Collapsible content -->
+
+        </div>
+    </nav>
+    <!--/.Navbar-->
+
+    <!--Mask-->
+    <div id="intro" class="view">
+
+        <div class="mask rgba-black-strong">
+
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+
+                <div class="row d-flex justify-content-center text-center">
+
+                    <div class="col-md-10">
+
+                        <!-- Heading -->
+                        <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">MECHANIC WORLD</h2>
+
+                        <!-- Divider -->
+                        <hr class="hr-light">
+
+                        <!-- Description -->
+                        <h4 class="white-text my-4">Mechanic in your Garage</h4>
+                        <button type="button" class="btn btn-outline-white">Read more<i class="fa fa-book ml-2"></i></button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!--/.Mask-->
+
+
+<!--Main layout-->
+<main class="mt-5">
+    <div class="container">
+
+        <!--Section: Best Features-->
+        <section id="best-features" class="text-center">
+
+            <div class="ui vertical stripe segment">
+                <div class="ui middle aligned stackable grid container">
+                    <div class='row home-car-logos'>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/bmw.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>BMW</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/toyota.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Toyota</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/honda.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Honda</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/ford.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Ford</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/chevrolet.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Chevrolet</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/nissan.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Nissan</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/dodge.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Dodge</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/volkswagen.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Volkswagen</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/mercedes_benz.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Mercedes</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/jeep.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Jeep</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/acura.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Acura</p>
+                        </div>
+                        <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
+                        <div class='image-space'>
+                        <img class='center-vertical' src="./img/car_makes/hyundai.png">
+                        </div>
+                        <p class='btn-gray-stroke-small'>Hyundai</p>
+                        </div>
+                        </div>
+                        
+                        </div>
+                </div>
+            </div>
+           
+
+        </section>
+        <!--Section: Best Features-->
+
+    </div>
+</main>
+<!--Main layout-->
+<footer class="page-footer font-small unique-color-dark pt-0">
+
+<div class="container mt-5 mb-4 text-center text-md-left">
+    <h4 class="ui inverted header">About</h4>
+                            <p>Mechanic World was created in 2018 by Vick, Avi, Vitalii and Ensarmu.</p>
+                            <h4 class="ui inverted header">Contact</h4>
+                            <p>For business inquiries, call (123)456-7890.</p>
+</div>
+</footer>
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+
+</html>

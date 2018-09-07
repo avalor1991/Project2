@@ -1,24 +1,33 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
-
-// Dependencies
-// =============================================================
+var db = require("../models");
 var path = require("path");
 
-// Routes
-// =============================================================
 module.exports = function(app) {
+  // Load index page
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+  // app.get("/", function (req, res) {
+  //   res.render("index", {
+  //     loginFailed: false
+  //   });
+  // });
 
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+  // app.get("/example", function (req, res) {
+  //   res.render("example", {
+  //     loginFailed: false
+  //   });
+  // });
+
+  // Render 404 page for any unmatched routes
+  // app.get("*", function(req, res) {
+  //   res.render("404");
+  // });
+
+  app.get("/example", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/example.html"));
   });
 
   // blog route loads blog.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get("/main", function(req, res) {

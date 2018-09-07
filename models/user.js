@@ -15,10 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  User.associate = function(models) {
-    // Associating User with Letter in letters.js
-    models.User.hasMany(models.Letter);
-  };
+ 
 
   return User;
 };

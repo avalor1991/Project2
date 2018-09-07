@@ -1,4 +1,4 @@
-// "use strict";   <- what is this?
+"use strict";
 
 var fs = require("fs");
 var path = require("path");
@@ -19,15 +19,14 @@ if (config.use_env_variable) {
   );
 }
 
-fs
-  .readdirSync(__dirname)
+fs.readdirSync(__dirname)
   .filter(function(file) {
     return (
       file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
     );
   })
   .forEach(function(file) {
-    var model = sequelize["import"](path.join(__dirname, file));
+    var model = sequelize.import(path.join(__dirname, file));
     db[model.name] = model;
   });
 
