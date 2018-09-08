@@ -27,10 +27,24 @@ module.exports = function(app) {
   // });
 
   app.get("/api/zipcodes", function(req, res) {
-  
     db.LocationInfo.findAll({}).then(function(resul) {
       res.json(resul);
     });
+  });
+
+  app.get("/api/services/:make", function(req, res) {
+    console.log("I am good" + req.params.make);
+    var userMake = req.params.make;
+    db.car_service
+      .findAll({
+        where: {
+          car_make: userMake
+        }
+      })
+      .then(function(result) {
+        console.log("I am result" + result);
+        res.json(result);
+      });
   });
 
   app.post(

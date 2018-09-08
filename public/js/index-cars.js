@@ -55,8 +55,40 @@ $(document).ready(function() {
 //     console.log(data);
 //   });
 // }
+$("#userCarData").on("click", function (event) {
+  // It helps to prevent from submitting traditional method of form 
+  event.preventDefault();
+  var userCarInfo = {
+    year: $("#car-years").val().trim(),
+    make: $("#car-makes").val().trim(),
+    model: $("#car-models").val().trim(),
+    trim: $("#car-model-trims option:selected").text()
+  }
+  console.log(userCarInfo.make);
+  // submitUserCar(userCarInfo);
+  servicesInfo(userCarInfo.make);
+});
 
+function submitUserCar(userCarInfo) {
+  $.post("/api/userCarInfo", userCarInfo, function(data) {
+    // window.location.href = "/";
+    // console.log(data);
+  });
+}
 
+function servicesInfo(make){
+  // var queryURL = "/api/services/" + make;
+  // console.log(queryURL);
+  // $.ajax({
+  //   url: queryURL,
+  //   method: "GET"
+  // }).then(function(response) {
+  //    console.log(response[0].car_make);
+  //    var promiseData = response[0].car_make;
+  //    console.log("Here is promiseData which is taken from response.data"+promiseData);
 
-
-
+  // });
+  $.get("/api/services/" + make, function(data){
+  console.log(data);
+  });
+}

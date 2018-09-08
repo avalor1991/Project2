@@ -14,7 +14,13 @@
     <link href="styles/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="styles/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 </head>
+
+<style>
+
+</style>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
@@ -28,7 +34,7 @@
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                    <a class="nav-link" href="#intro">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#best-features">Features</a>
@@ -41,7 +47,7 @@
                 <!-- Social Icon  -->
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                    <a class="nav-link"><button class="btn btn-elegant">User Name</button></a>
+                    <a class="nav-link"><button class="btn btn-warning">User Name</button></a>
                     </li> 
                 </ul>
             </div>
@@ -65,8 +71,8 @@
                     </div>
                     
                     <div class="container mw-100  mt-5 p-5 invisible" id = "carModel" >
-                        <div class="card card-image grey darken-3">
-                            <div class="text-white text-center py-2 px-2 ">
+                        <div class="card card-image" style="background-image: url(/img/car_makes/carModel.png)">
+                            <div class="text-white text-center py-1 px-1 ">
                                 <table class="table table-bordered ">
                                     <tbody>
                                         <tr valign="bottom">
@@ -76,24 +82,71 @@
                                             <th class="text-monospace black">Trim:</th>
                                         </tr>
                                         <tr>
-                                            <td><select class = "p-1" id="car-years" name="car-years"></select></td>
-                                            <td><select  class = "p-1" id="car-makes" name="car-makes"></select></td>
-                                            <td><select class = "p-1" id="car-models" name="car-models"></select></td>
-                                            <td><select  class = "p-1" id="car-model-trims" name="car-model-trims"></select></td>
+                                            <td><select class = "form-control p-1" id="car-years" name="car-years"></select></td>
+                                            <td><select class = "form-control p-1" id="car-makes" name="car-makes"></select></td>
+                                            <td><select class = "form-control p-1" id="car-models" name="car-models"></select></td>
+                                            <td><select class = "form-control p-1" id="car-model-trims" name="car-model-trims"></select></td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <button class="btn btn-primary" value="NEXT STEP" >NEXT STEP</button>
+                                
                             </div>
                         </div>
+                        <button class="btn btn-primary" id="userCarData" value="NEXT STEP" >NEXT STEP</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+ 
+<div class="col-md-12 p-0">
+<div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+<div class="text-white py-5 px-4 my-5"> 
+        <h2 class="display-4 font-weight-bold white-text pt-5 mb-2 text-center">Appointment schedule</h2>
+         
+    <div class="container">
+        
+        <form action="" class="form-horizontal"  role="form">
+            <div class="form-group">
+                <label for="dtp_input2" class="col-md-2 control-label">Please select the day:</label>
+                <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+                    <input type="hidden" id="dtp_input2" value="" /><br/>
+                <label for="dtp_input2" class="col-md-2 control-label">Please enter adress:</label>
+                <div class="input-group date col-md-5">
+                    <input class = "form-control " id="address" name="address" type="text" placeholder="address" class="input-xlarge">
+                </div>
+                <label for="dtp_input2" class="col-md-2 control-label">City/Town:</label>
+                <div class="input-group date col-md-5">
+                    <input class = "form-control" id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                </div>
+                <label for="dtp_input2" class="col-md-2 control-label">State:</label>
+                <div class="input-group date col-md-5">
+                    <input class = "form-control" id="region" name="region" type="text" placeholder="state / province / region" class="input-xlarge">
+                </div>
+                <label for="dtp_input2" class="col-md-2 control-label">Phone number:</label>
+                <div class="input-group date col-md-5">
+                    <input class = "form-control" id="phone" name="phone" type="text" placeholder="Phone number " class="input-xlarge">
+                </div>
+            </div> 
+            <button id="confirm" class="btn btn-primary p-4">Press to confirm your appointment</button>
+ 
+        </form>
+    </div>
+</div>
+</div>
+</div>
 
-
+<footer class="page-footer font-small unique-color-dark fixed-buttom p-0">
+    <div class="container  text-center text-md-left">
+        <h4 class="ui inverted header">About</h4>
+        <p>Mechanic World was created in 2018 by Vick, Avi, Vitalii and Ensarmu.</p>
+        <h4 class="ui inverted header">Contact</h4>
+        <p>For business inquiries, call (123)456-7890.</p>
+    </div>
+</footer>    
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.4.js"></script>
@@ -104,6 +157,19 @@
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script type="text/javascript" src="js/carInfo.js"></script>
 <script type="text/javascript" src="js/index-cars.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
+<script type="text/javascript">
+$('.form_date').datetimepicker({
+    language:  'fr',
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0
+});</script>
 </body>
 
 </html>
