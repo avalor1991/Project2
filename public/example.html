@@ -5,7 +5,7 @@
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+    <title>Mechanic World</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -19,102 +19,86 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
         <div class="container">
-
-            <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">Navbar</a>
-
-            <!-- Collapse button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+            <a class="navbar-brand" href="#"><strong>M E C H A N I C || W O R L D</strong></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="basicExampleNav">
-
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                        <a class="nav-link" href="#intro">Home</a>
+                    <a class="nav-link" href="#intro">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#best-features">Features</a>
+                    <a class="nav-link" href="#best-features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#examples">Examples</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="#examples">Examples</a>
                     </li>
                 </ul>
                 <!-- Links -->
-
                 <!-- Social Icon  -->
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                        <a class="nav-link"><button>User Name</button></a>
-                    </li>
-                   
+                    <a class="nav-link"><button class="btn btn-elegant">User Name</button></a>
+                    </li> 
                 </ul>
-
             </div>
-            <!-- Collapsible content -->
-
         </div>
     </nav>
-    <!--/.Navbar-->
 
-    <!--Mask-->
     <div id="intro" class="view">
-
         <div class="mask rgba-black-strong">
-
-            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
-
-                <div class="row d-flex justify-content-center text-center">
-
-                    <div class="col-md-10">
-
-                        <div class="container">
-
-                            <div class="form-group">
-                                <form id="zip-form">
-                                    
-                                    <input type="zipcode" class="form-control" placeholder="Enter zipcode" id="zip">
-                                    <small class="form-text text-muted">Enter Zip-code for available service area.</small>
-                                    <button id="submit" class="btn btn-primary">Submit</button>
-                                    <div class="infoBox"></div>
-                                </form>
-                                <div id = "list"></div>
+            <div class="container-fluid align-items-center justify-content-center mt-5 p-5">
+                <div class="row justify-content-center text-center">
+                    <div class="container justify-content-center">
+                        <div class="form-group">
+                            <form id="zip-form">
+                                <input type="zipcode" class="form-control" placeholder="Enter zipcode" id="zip">
+                                <small class="form-text text-muted">Enter Zip-code for available service area.</small>
+                                <button id="submit" class="btn btn-primary">Submit</button>
+                                <div class="infoBox white-text  text-muted"></div>
+                            </form>
+                            <hr><hr><hr>
+                        </div>
+                    </div>
+                    
+                    <div class="container mw-100  mt-5 p-5 invisible" id = "carModel" >
+                        <div class="card card-image grey darken-3">
+                            <div class="text-white text-center py-2 px-2 ">
+                                <table class="table table-bordered ">
+                                    <tbody>
+                                        <tr valign="bottom">
+                                            <th class="text-monospace black">Year:</th>
+                                            <th class="text-monospace black">Make:</th>
+                                            <th class="text-monospace black">Model:</th>
+                                            <th class="text-monospace black">Trim:</th>
+                                        </tr>
+                                        <tr>
+                                            <td><select class = "p-1" id="car-years" name="car-years"></select></td>
+                                            <td><select  class = "p-1" id="car-makes" name="car-makes"></select></td>
+                                            <td><select class = "p-1" id="car-models" name="car-models"></select></td>
+                                            <td><select  class = "p-1" id="car-model-trims" name="car-model-trims"></select></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="btn btn-primary" value="NEXT STEP" >NEXT STEP</button>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-    <!--/.Mask-->
+    
 
-
-
-<!--Main layout-->
 
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.4.js"></script>
-
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<!-- Bootstrap tooltips -->
 <script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
