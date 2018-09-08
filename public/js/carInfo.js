@@ -22,15 +22,13 @@ $(document).ready(function() {
         if (arr.includes(ZipCode) === true) {
           $(".infoBox").text("Service Availiable");
           $("#carModel").attr("class", "visible");
-          // $("#list").empty();
-          // var row = $("<div class='container' id='car-info'>");
-          // row.append('<label for="year">YEAR: <select name="car-years" id="car-years"></select></label>');
-          // $("#list").prepend(row);
         } else {
           $(".infoBox").prepend("NO service in your area ,Please try another zipcode");
           $("#chirp-area").empty();
         }
       });
+
     });
+    // $()
   });
 });
