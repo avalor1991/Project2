@@ -21,28 +21,24 @@
         <div class="container">
 
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#"><strong>M E C H A N I C || W O R L D</strong</a>
+            <a class="navbar-brand" href="#"><strong>M E C H A N I C || W O R L D</strong></a>
 
-            <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="basicExampleNav">
 
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                        <a class="nav-link" href="#intro">Home</a>
+                    <a class="nav-link" href="#intro">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#best-features">Features</a>
+                    <a class="nav-link" href="#best-features">Features</a>
                     </li>
-                    
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
                 <!-- Links -->
@@ -50,7 +46,7 @@
                 <!-- Social Icon  -->
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                        <a class="nav-link"><button data-toggle="modal" data-target="#modalLoginForm" id = "signIn">Login</button></a>
+                        <a class="nav-link "><button class="btn btn-elegant" data-toggle="modal" data-target="#modalLoginForm" id = "signIn">Login</button></a>
                     </li>
                     <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document" >
@@ -62,37 +58,25 @@
                         </button>
                     </div>
                     <div class="modal-body mx-3">
-                        <!-- <div class="md-form mb-5">
-                            <i class="fa fa-envelope prefix grey-text"></i>
-                            <input type="email" id="defaultForm-email" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
-                        </div>
-        
-                        <div class="md-form mb-4">
-                            <i class="fa fa-lock prefix grey-text"></i>
-                            <input type="password" id="defaultForm-pass" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
-                        </div> -->
-<form action="/login" method="post" class="ui large form" id="signIn" name="signin">
+                       
+<form action="/login" method="post"  id="signIn" name="signin">
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="email" type="email" placeholder="Email">
+                        <input class="form-control mb-4" name="email" type="email" placeholder="Email">
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="lock icon"></i>
-                        <input type="password" name="password" placeholder="Password">
+                        <input class="form-control mb-4" type="password" name="password" placeholder="Password">
                     </div>
                 </div>
-                <!-- <div class="ui fluid large submit button" value="Log In" id="loginInput">Log In</div> -->
-                <input class="btn btn-default d-flex justify-content-center" type="submit" value="Log In" id="loginInput" />
+                <div class="modal-footer d-flex justify-content-center">
+                <input class="btn btn-deep-orange" type="submit" value="Log In" id="loginInput" />
+                </div>
             </div>
-
-            <div class="ui error message"></div>
-
         </form>
                     </div>
                     
@@ -100,7 +84,7 @@
             </div>
         </div>
                     <li class="nav-item">
-                        <a class="nav-link"><button data-toggle="modal" data-target="#modalRegisterForm" id = "signIn">Sign Up</button></a>
+                        <a class="nav-link"><button class = "btn btn-elegant" data-toggle = "modal" data-target="#modalRegisterForm" id = "signIn">Sign Up</button></a>
                     </li>
                     <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -112,46 +96,27 @@
                             </button>
                         </div>
                         <div class="modal-body mx-3">
-                            <!-- {{!-- <div class="md-form mb-5">
-                                <i class="fa fa-user prefix grey-text"></i>
-                                <input type="text" id="orangeForm-name" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="orangeForm-name">First Name</label>
-                            </div>
-                            <div class="md-form mb-5">
-                                <i class="fa fa-user prefix grey-text"></i>
-                                <input type="text" id="orangeForm-name" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="orangeForm-name">Last Name</label>
-                            </div>
-                            <div class="md-form mb-5">
-                                <i class="fa fa-envelope prefix grey-text"></i>
-                                <input type="email" id="orangeForm-email" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
-                            </div>
-            
-                            <div class="md-form mb-4">
-                                <i class="fa fa-lock prefix grey-text"></i>
-                                <input type="password" id="orangeForm-pass" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
-                            </div> --}} -->
-<form action="/signup" method="post" class="ui large form" id="signup" name="signup">
+                            
+<form action="/signup" method="post" id="signup" name="signup">
             <div class="ui stacked segment">
                 <label for="email">Email</label>
-                <input class="text" name="email" type="email" />
+                <input class="form-control mb-4" class="text" name="email" type="email" />
                 <label for="firstName">First Name</label>
-                <input name="firstName" type="text" />
+                <input class="form-control mb-4" name="firstName" type="text" />
                 <label for="lastName">Last Name</label>
-                <input name="lastName" type="text" />
+                <input class="form-control mb-4" name="lastName" type="text" />
                 <label for="password">New Password</label>
-                <input name="password" type="password" />
-                <input class="ui fluid large submit button" type="submit" value="Sign Up" id="loginInput" />
+                <input class="form-control mb-4" name="password" type="password" />
+                <div class="modal-footer d-flex justify-content-center">
+                <input class="btn btn-deep-orange" type="submit" value="Sign Up" id="loginInput" />
+
+                </div>
             </div>
 
         </form>
             
                         </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn btn-deep-orange">Sign up</button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
