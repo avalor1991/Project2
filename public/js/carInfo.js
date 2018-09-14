@@ -1,4 +1,5 @@
 $(document).ready(function() {
+ 
   $("#submit").on("click", function(event) {
     event.preventDefault();
 
@@ -9,7 +10,6 @@ $(document).ready(function() {
           .val()
           .trim()
       );
-      console.log(ZipCode);
       var promise1 = new Promise(function(resolve, reject) {
         var arr = [];
         for (var i = 0; i < list.length; i++) {
@@ -18,7 +18,6 @@ $(document).ready(function() {
         resolve(arr);
       });
       promise1.then(function(arr) {
-        console.log(arr);
         if (arr.includes(ZipCode) === true) {
           $(".infoBox").text("Service Availiable");
           $("#carModel").attr("class", "visible");
@@ -29,6 +28,29 @@ $(document).ready(function() {
       });
 
     });
-    // $()
   });
+  $("#confirm").on("click",function(event){
+    event.preventDefault();
+    var userAppointmentInfo = {
+      year: $("#car-years").val().trim(),
+      make: $("#car-makes").val().trim(),
+      model: $("#car-models").val().trim(),
+      trim: $("#car-model-trims option:selected").text(),
+      serviceCost: $(".serviceCost").text(),
+      date: $("#date-info").val().trim(),
+      address: $("#address-info").val().trim(),
+      city: $("#city-info").val().trim(),
+      state: $("#state-info").val().trim(),
+      zipCode: $("#zip").val().trim(),
+      phoneNumber: $("#phone-info").val().trim()
+    }
+    console.log(userAppointmentInfo);
+    submitUserCar(userAppointmentInfo);
+  });
+
+
+  function submitUserCar(userAppointmentInfo) {
+    $.post("/api/userAppointmentInfo", userAppointmentInfo, function(data) {
+    });
+  }
 });

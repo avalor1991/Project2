@@ -23,6 +23,8 @@ header,
 /* #zip-form{
   width: 60%;
 } */
+
+
 @media (max-width: 768px) {
   .navbar:not(.top-nav-collapse) {
     background: #24355C;
