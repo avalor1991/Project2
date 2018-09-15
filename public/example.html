@@ -16,6 +16,8 @@
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="styles/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 </head>
 
 <style>
@@ -34,20 +36,18 @@
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/"></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#best-features">Features</a>
+                    <a class="nav-link" href="#best-features"></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#examples">Examples</a>
+                    <a class="nav-link" href="#examples"></a>
                     </li>
                 </ul>
-                <!-- Links -->
-                <!-- Social Icon  -->
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                    <a class="nav-link"><button class="btn btn-warning">User Name</button></a>
+                    <a class="nav-link" id ="firstName"><button class="btn btn-warning" >USER</button></a>
                     </li> 
                 </ul>
             </div>
@@ -98,9 +98,15 @@
             </div>
         </div>
     </div>
+    
+    <div class="container-fluid align-items-center justify-content-center mt-5 p-5">
+        <div id="serviceTable" class="custom-control custom-checkbox">
+            <h3> Please choose services for <span id="serviceMake"> </span> </h3>
+        </div >
+    </div>
  
-<div class="col-md-12 p-0">
-<div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+<div class="col-md-12 p-0" id ="app">
+<div class="card card-image "  style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
 <div class="text-white py-5 px-4 my-5"> 
         <h2 class="display-4 font-weight-bold white-text pt-5 mb-2 text-center">Appointment schedule</h2>
          
@@ -109,36 +115,44 @@
         <form action="" class="form-horizontal"  role="form">
             <div class="form-group">
                 <label for="dtp_input2" class="col-md-2 control-label">Please select the day:</label>
-                <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                <input class="form-control" size="16" type="text" value="" readonly>
+                <div  class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <input id="date-info" class="form-control" size="16" type="text" value="" readonly>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
                     <input type="hidden" id="dtp_input2" value="" /><br/>
                 <label for="dtp_input2" class="col-md-2 control-label">Please enter adress:</label>
-                <div class="input-group date col-md-5">
-                    <input class = "form-control " id="address" name="address" type="text" placeholder="address" class="input-xlarge">
+                <div  class="input-group date col-md-5">
+                    <input id="address-info" class = "form-control " id="address" name="address" type="text" placeholder="address" class="input-xlarge">
                 </div>
                 <label for="dtp_input2" class="col-md-2 control-label">City/Town:</label>
                 <div class="input-group date col-md-5">
-                    <input class = "form-control" id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                    <input id="city-info" class = "form-control" id="city" name="city" type="text" placeholder="city" class="input-xlarge">
                 </div>
                 <label for="dtp_input2" class="col-md-2 control-label">State:</label>
                 <div class="input-group date col-md-5">
-                    <input class = "form-control" id="region" name="region" type="text" placeholder="state / province / region" class="input-xlarge">
+                    <input id="state-info" class = "form-control" id="region" name="region" type="text" placeholder="state / province / region" class="input-xlarge">
                 </div>
                 <label for="dtp_input2" class="col-md-2 control-label">Phone number:</label>
                 <div class="input-group date col-md-5">
-                    <input class = "form-control" id="phone" name="phone" type="text" placeholder="Phone number " class="input-xlarge">
+                    <input id="phone-info" class = "form-control" id="phone" name="phone" type="text" placeholder="Phone number " class="input-xlarge">
                 </div>
-            </div> 
-            <button id="confirm" class="btn btn-primary p-4">Press to confirm your appointment</button>
- 
+            </div>
+            <button id="confirm" class="btn btn-danger p-4"><a href="#ex1" rel="modal:open" style="color: white;">Press to confirm your appointment</a></button>
+         
         </form>
     </div>
 </div>
 </div>
 </div>
 
+    
+    <!-- Modal -->
+    <div id="ex1" class="modal">
+        <p>Success!</p>
+        <a href="index.html" rel="folow">Close</a>
+    </div>
+          
+          
 <footer class="page-footer font-small unique-color-dark fixed-buttom p-0">
     <div class="container  text-center text-md-left">
         <h4 class="ui inverted header">About</h4>
@@ -159,6 +173,8 @@
 <script type="text/javascript" src="js/index-cars.js"></script>
 <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="js/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
 <script type="text/javascript">
 $('.form_date').datetimepicker({
     language:  'fr',

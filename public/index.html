@@ -32,13 +32,13 @@
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/"></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#best-features">Features</a>
+                    <a class="nav-link" href="#best-features"></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="#contact"></a>
                     </li>
                 </ul>
                 <!-- Links -->
@@ -48,129 +48,96 @@
                     <li class="nav-item">
                         <a class="nav-link "><button class="btn btn-warning " data-toggle="modal" data-target="#modalLoginForm" id = "signIn">Login</button></a>
                     </li>
-                    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document" >
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" >
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <form action="/login" method="post"  id="signIn" name="signin">
+                    <div class="ui stacked segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input class="form-control mb-4" name="email" type="email" placeholder="Email">
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-body mx-3">
-                       
-<form action="/login" method="post"  id="signIn" name="signin">
-            <div class="ui stacked segment">
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="user icon"></i>
-                        <input class="form-control mb-4" name="email" type="email" placeholder="Email">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
+                    <div class="field">
+                        <div class="ui left icon input">
                         <i class="lock icon"></i>
                         <input class="form-control mb-4" type="password" name="password" placeholder="Password">
-                    </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                <input class="btn btn-warning" type="submit" value="Log In">
-                </div>
-            </div>
-        </form>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-                    <li class="nav-item">
-                        <a class="nav-link"><button class = "btn btn-warning" data-toggle = "modal" data-target="#modalRegisterForm" id = "signIn">Sign Up</button></a>
-                    </li>
-                    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header text-center">
-                            <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
-                        <div class="modal-body mx-3">
-                            
-<form action="/signup" method="post" id="signup" name="signup">
-            <div class="ui stacked segment">
-                <label for="email">Email</label>
-                <input class="form-control mb-4" class="text" name="email" type="email" />
-                <label for="firstName">First Name</label>
-                <input class="form-control mb-4" name="firstName" type="text" />
-                <label for="lastName">Last Name</label>
-                <input class="form-control mb-4" name="lastName" type="text" />
-                <label for="password">New Password</label>
-                <input class="form-control mb-4" name="password" type="password" />
-                <div class="modal-footer d-flex justify-content-center">
-                <input class="btn btn-warning" type="submit" value="Sign Up" id="loginInput" />
-            </div>
-            </div>
-
-        </form>
-            
-                        </div>
-                        
                     </div>
-                </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <input class="btn btn-warning" type="submit" value="Log In">
+                     </div>
+                </form>
             </div>
-                    
-                </ul>
-
-            </div>
-            <!-- Collapsible content -->
-
         </div>
-    </nav>
-    <!--/.Navbar-->
-
-    <!--Mask-->
-    <div id="intro" class="view">
-
-        <div class="mask rgba-black-strong">
-
-            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
-
-                <div class="row d-flex justify-content-center text-center">
-
-                    <div class="col-md-10">
-
-                        <!-- Heading -->
-                        <h2 class="display-5 font-weight-bold white-text pt-5 mb-2">Car Care Made Easy</h2>
-
-                        <!-- Divider -->
-                        <hr class="hr-light">
-
-                        <!-- Description -->
-                        <button type="button" class="btn btn-outline-white">Read more<i class="fa fa-book ml-2"></i></button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
     </div>
-    <!--/.Mask-->
+</div>
+    <li class="nav-item">
+        <a class="nav-link"><button class = "btn btn-warning" data-toggle = "modal" data-target="#modalRegisterForm" id = "signIn">Sign Up</button></a>
+    </li>
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">         
+                    <form action="/signup" method="post" id="signup" name="signup">
+                        <div class="ui stacked segment">
+                            <label for="email">Email</label>
+                            <input class="form-control mb-4" class="text" name="email" type="email" />
+                            <label for="firstName">First Name</label>
+                            <input class="form-control mb-4" name="firstName" type="text" />
+                            <label for="lastName">Last Name</label>
+                            <input class="form-control mb-4" name="lastName" type="text" />
+                            <label for="password">New Password</label>
+                            <input class="form-control mb-4" name="password" type="password" />
+                            <div class="modal-footer d-flex justify-content-center">
+                            <input class="btn btn-warning" type="submit" value="Sign Up" id="loginInput" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div id="intro" class="view">
+        <div class="mask rgba-black-strong">
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-md-10">
+                        <h2 class="display-5 font-weight-bold white-text pt-5 mb-2">Car trouble? We can help</h2>
+                            <p class="white-text">Book a service online and our mechanics will come to your home or office to service your car. We make the entire process easy for you. Using our website you can access the maintenance schedule of all your cars, book an appointment, access service history. And since we don’t have the overhead cost of a shop, we are able to charge less while providing a convenient service.</p>
+                            <hr class="hr-light">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-<!--Main layout-->
 <main class="mt-5">
     <div class="container">
-
-        <!--Section: Best Features-->
         <section id="best-features" class="text-center">
-
             <div class="ui vertical stripe segment">
-                <div class="ui middle aligned stackable grid container">
-                    <div class='row home-car-logos'>
+                <div class="ui middle aligned stackable grid container justify-content-center">
+                    <div class='row home-car-logos justify-content-center'>
                         <div class='col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center'>
                         <div class='image-space'>
                         <img class='center-vertical' src="./img/car_makes/bmw.png">
@@ -244,26 +211,19 @@
                         <p class='btn-gray-stroke-small'>Hyundai</p>
                         </div>
                         </div>
-                        
-                        </div>
+                    </div>
                 </div>
             </div>
-           
-
         </section>
-        <!--Section: Best Features-->
-
     </div>
 </main>
-<!--Main layout-->
 <footer class="page-footer font-small unique-color-dark pt-0">
-
-<div class="container mt-5 mb-4 text-center text-md-left">
-    <h4 class="ui inverted header">About</h4>
-                            <p>Mechanic World was created in 2018 by Vick, Avi, Vitalii and Ensarmu.</p>
-                            <h4 class="ui inverted header">Contact</h4>
-                            <p>For business inquiries, call (123)456-7890.</p>
-</div>
+    <div class="container mt-5 mb-4 text-center text-md-left">
+        <h4 class="inverted header">About</h4>
+        <p>Mechanic World was created in 2018 by Vick, Avi, Vitalii and Ensarmu.</p>
+        <h4 class="inverted header">Contact</h4>
+        <p>For business inquiries, call (123)456-7890.</p>
+    </div>
 </footer>
 <!-- SCRIPTS -->
 <!-- JQuery -->
@@ -274,7 +234,7 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <!-- <script type="text/javascript" src="js/login.js"></script> -->
 </body>
 
 </html>

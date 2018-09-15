@@ -22,73 +22,56 @@ $(document).ready(function() {
   carquery.year_select_max= "present";
 });
 
-// $("#cq-show-data").on("click", function (event) {
-//   // It helps to prevent from submitting traditional method of form 
-//   event.preventDefault();
-//   var userCarInfo = {
-//     year: $("#car-years").val().trim(),
-//     make: $("#car-makes").val().trim(),
-//     model: $("#car-models").val().trim(),
-//     trim: $("#car-model-trims option:selected").text()
-//   }
 
-//   var userInfo = {
-//     firstName: $("#userFirstName").val().trim(),
-//     lastName: $("#userLastName").val().trim(),
-//     email: $("#userEmail").val().trim()
-//   }
-
-//   console.log(userInfo);
-//   submitUserCar(userCarInfo);
-//   submitUserInfo(userInfo);
-
-// });
-
-// function submitUserCar(userCarInfo) {
-//   $.post("/api/userCarInfo", userCarInfo, function(data) {
-//     // window.location.href = "/";
-//     console.log(data);
-//   });
-// }
-// function submitUserInfo(userInfo) {
-//   $.post("/api/userInfo", userInfo, function(data) {
-//     console.log(data);
-//   });
-// }
 $("#userCarData").on("click", function (event) {
-  // It helps to prevent from submitting traditional method of form 
+  $('html, body').animate({
+    scrollTop: ($("#serviceTable").offset().top - 100)
+  }, 2000);
   event.preventDefault();
-  var userCarInfo = {
-    year: $("#car-years").val().trim(),
-    make: $("#car-makes").val().trim(),
-    model: $("#car-models").val().trim(),
-    trim: $("#car-model-trims option:selected").text()
-  }
-  console.log(userCarInfo.make);
-  // submitUserCar(userCarInfo);
-  servicesInfo(userCarInfo.make);
+  var model = $("#car-makes").val().trim()
+  servicesInfo(model);
 });
 
-function submitUserCar(userCarInfo) {
-  $.post("/api/userCarInfo", userCarInfo, function(data) {
-    // window.location.href = "/";
-    // console.log(data);
-  });
-}
+$("#submit3").on("click", function (event) {
+  $('html, body').animate({
+  scrollTop: ($("#app").offset().top - 100)
+}, 2000);
+event.preventDefault();
+});
+
 
 function servicesInfo(make){
-  // var queryURL = "/api/services/" + make;
-  // console.log(queryURL);
-  // $.ajax({
-  //   url: queryURL,
-  //   method: "GET"
-  // }).then(function(response) {
-  //    console.log(response[0].car_make);
-  //    var promiseData = response[0].car_make;
-  //    console.log("Here is promiseData which is taken from response.data"+promiseData);
 
-  // });
+  // Ajax call for services is happenning over here 
   $.get("/api/services/" + make, function(data){
-  console.log(data);
-  });
+  $("#serviceMake").text(data[0].car_make);
+var brake_price = parseInt(data[0].brake_price);
+$('#serviceTable').append('<input  type="checkbox" name="channelcost"  onClick="test(this);"  value="' + brake_price + '"> Break Service: $<span id="brakePrice">' + brake_price + '</span><br>');
+
+var oil_price = parseInt(data[0].oil_price);
+$('#serviceTable').append('<input type="checkbox" name="channelcost"  onClick="test(this);"  value="' + oil_price + '"> Oil Service: $<span id="oilPrice">' + oil_price + '</span><br>');
+
+var tire_rotation_price = parseInt(data[0].tire_rotation_price);
+$('#serviceTable').append('<input type="checkbox" name="channelcost"  onClick="test(this);"  value="' + tire_rotation_price + '"> tire_rotation Service: $<span id="tire_rotationPrice">' + tire_rotation_price + '</span><br>');
+
+
+var transmission_price = parseInt(data[0].transmission_price);
+$('#serviceTable').append('<input type="checkbox" name="channelcost"  onClick="test(this);"  value="' + transmission_price + '"> Transmission Service: $<span id="transmissionPrice">' + transmission_price + '</span><br>');
+
+var gasket_price = parseInt(data[0].gasket_price);
+$('#serviceTable').append('<input type="checkbox" name="channelcost"  onClick="test(this);"  value="' + gasket_price + '"> Valve Gasket Replacement: $<span id="gasketPrice">' + gasket_price + '</span><br>');
+$('#serviceTable').append('<p> Total price for services:  $</p> <p class="serviceCost"> 0 </p>')
+});
+
 }
+
+var total = 0;
+    function test(item){
+        if(item.checked){
+           total+= parseInt(item.value);
+        }else{
+           total-= parseInt(item.value);
+        }
+        $(".serviceCost").text(total);
+    }
+

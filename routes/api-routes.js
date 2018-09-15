@@ -5,26 +5,6 @@ var LocationInfo = require ("../models/locInfo.js")
 
 
 module.exports = function(app) {
-  // Get all examples
-  // app.get("/api/examples", function(req, res) {
-  //   db.Example.findAll({}).then(function(dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
-
-  // // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.Example.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
 
   app.get("/api/zipcodes", function(req, res) {
     db.LocationInfo.findAll({}).then(function(resul) {
@@ -32,6 +12,7 @@ module.exports = function(app) {
     });
   });
 
+  
   app.get("/api/services/:make", function(req, res) {
     console.log("I am good" + req.params.make);
     var userMake = req.params.make;
@@ -45,6 +26,25 @@ module.exports = function(app) {
         console.log("I am result" + result);
         res.json(result);
       });
+  });
+
+  app.post("/api/userAppointmentInfo", function (req, res) {
+    console.log(req.body);
+    db.userAppointmentInfo.create({
+      year: req.body.year,
+      make: req.body.make,
+      model: req.body.model,
+      trim: req.body.trim,
+      date: req.body.date,
+      address: req.body.address,
+      city: req.body.city,
+      state: req.body.state,
+      zipCode: req.body.zipCode,
+      phoneNumber: req.body.phoneNumber,
+      serviceCost: req.body.serviceCost
+    }).then(function (dbUserAppointmentInfo) {
+      res.json(dbUserAppointmentInfo);
+    });
   });
 
   app.post(
